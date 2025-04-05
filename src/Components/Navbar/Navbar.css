@@ -1,0 +1,116 @@
+.navbar {
+    display: flex;
+    height: 150px; /* Explicit height */
+    align-items: center; /* Ensures content is centered */
+    background-color: #071e37;
+    box-shadow: 0 1px 3px -2px black;
+}
+
+  
+.nav-menu {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    list-style: none; /* Remove list item bullets */
+    gap: 5px; /* Reduce spacing between items */
+    color: #ffffff; /* Set text color to white for contrast */
+    font-size: 25px;
+    font-weight: 500; /* Adjust weight if needed */
+    padding: 0; /* Ensure no extra padding */
+}
+
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #faf9f9;
+    cursor: pointer;
+    padding: 5px 10px; /* Adjust padding for tighter spacing */
+    margin: 10px; /* Remove margins */
+}
+
+.nav-menu hr{
+    border: none;
+    Width: 80%;
+    Height: 3px;
+    Border-radius: 10px;
+    Background: #FF4141
+    }
+    
+.nav-view-profile{
+    display: flex;
+    align-items: center;
+    Gap: 25px;
+    }
+
+.nav-view-profile img{
+    width: 50px; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 500px;
+    }
+
+.nav-view-cart{
+    display: flex;
+    align-items: center;
+    Gap: 25px;
+    }
+    
+.nav-view-cart img{
+    width: 60px; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 1px;
+}  
+
+.nav-view-count{
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -35px;
+    margin-left: -55px;
+    border-radius: 11px;
+    font-size: 14px;
+    background: red;
+    color: white;
+    }
+
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logout button {
+    width: 120px; /* Adjust width for oval shape */
+    height: 40px; /* Adjust height for oval shape */
+    border-radius: 30px; /* Slightly rounded corners for oval */
+    border: 1px solid #7a7a7a;
+    color: #515151;
+    font-size: 20px;
+    font-weight: 500;
+    background: white;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.logout button:active {
+    width: 120px;
+    height: 40px;
+    outline: none;
+    border: 1px solid #7a7a7a;
+    color: #515151;
+    font-size: 20px;
+    font-weight: 500;
+    background: white;
+    cursor: pointer;
+    border-radius: 30px; /* Keeps the oval shape on active */
+    margin-left: 10px;
+    background: #f3f3f3;
+}
+
+    
