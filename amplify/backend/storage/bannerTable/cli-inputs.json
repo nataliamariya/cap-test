@@ -1,0 +1,10 @@
+{
+  "resourceName": "bannerTable",
+  "tableName": "Banners",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

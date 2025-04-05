@@ -1,4 +1,36 @@
 {
+  "api": {
+    "ecommerceAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getProducts"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getBanners"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getNavbarImages"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "auth": {
     "frontend8eb8d358": {
       "customAuth": false,
@@ -25,6 +57,94 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "getBanners": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getNavbarImages": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getProducts": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "bannerTable"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_getBanners_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getBanners"
+        }
+      ]
+    },
+    "AMPLIFY_function_getBanners_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getBanners"
+        }
+      ]
+    },
+    "AMPLIFY_function_getNavbarImages_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getNavbarImages"
+        }
+      ]
+    },
+    "AMPLIFY_function_getNavbarImages_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getNavbarImages"
+        }
+      ]
+    },
+    "AMPLIFY_function_getProducts_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getProducts"
+        }
+      ]
+    },
+    "AMPLIFY_function_getProducts_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getProducts"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "bannerTable": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "navbarImages": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
     }
   }
 }

@@ -1,58 +1,231 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-frontend-dev-c554c-authRole",
-      "UnauthRoleArn": "arn:aws:iam::761018853069:role/amplify-frontend-dev-c554c-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::761018853069:role/amplify-frontend-dev-c554c-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-frontend-dev-c554c-deployment",
-      "UnauthRoleName": "amplify-frontend-dev-c554c-unauthRole",
-      "StackName": "amplify-frontend-dev-c554c",
-      "StackId": "arn:aws:cloudformation:us-east-1:761018853069:stack/amplify-frontend-dev-c554c/f423bf50-fe10-11ef-a7fe-0affdbff7db9",
-      "AmplifyAppId": "dyit5xmpum271"
+      "AuthRoleName": "amplify-frontend-devamp-fc978-authRole",
+      "UnauthRoleArn": "arn:aws:iam::438465130459:role/amplify-frontend-devamp-fc978-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::438465130459:role/amplify-frontend-devamp-fc978-authRole",
+      "Region": "ca-central-1",
+      "DeploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
+      "UnauthRoleName": "amplify-frontend-devamp-fc978-unauthRole",
+      "StackName": "amplify-frontend-devamp-fc978",
+      "StackId": "arn:aws:cloudformation:ca-central-1:438465130459:stack/amplify-frontend-devamp-fc978/34296e30-1241-11f0-9ab0-06f78979b607",
+      "AmplifyAppId": "d173wthim0yt7n"
     }
   },
   "auth": {
     "frontend8eb8d358": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
       "customAuth": false,
+      "dependsOn": [],
       "frontendAuthConfig": {
-        "socialProviders": [],
-        "usernameAttributes": [
-          "EMAIL"
-        ],
-        "signupAttributes": [
-          "EMAIL"
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
         ],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,
           "passwordPolicyCharacters": []
         },
-        "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
         ],
         "verificationMechanisms": [
           "EMAIL"
         ]
       },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-dev-c554c-deployment/amplify-cfn-templates/auth/frontend8eb8d358-cloudformation-template.json",
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/auth/frontend8eb8d358-cloudformation-template.json",
         "logicalId": "authfrontend8eb8d358"
       },
-      "lastPushTimeStamp": "2025-03-11T00:41:10.857Z",
+      "lastPushTimeStamp": "2025-04-05T20:49:19.975Z",
       "output": {
-        "UserPoolId": "us-east-1_MpmkKs4UN",
-        "AppClientIDWeb": "7auifp1qh9r7h0737dv4drl3j4",
-        "AppClientID": "2mtips7v6h5s5plh4o2b0pi8b7",
-        "IdentityPoolId": "us-east-1:d21d9d84-6633-4b92-ae55-f74351405d6d",
-        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:761018853069:userpool/us-east-1_MpmkKs4UN",
-        "IdentityPoolName": "frontend8eb8d358_identitypool_8eb8d358__dev",
+        "UserPoolId": "ca-central-1_ys7qcIJoY",
+        "AppClientIDWeb": "3lqt3ds0c92avfhqc9jmp5h4jo",
+        "AppClientID": "3o81aiv03lk50ppar0oskqk6ui",
+        "IdentityPoolId": "ca-central-1:fd933516-7077-43c4-98a2-ce355171e42a",
+        "UserPoolArn": "arn:aws:cognito-idp:ca-central-1:438465130459:userpool/ca-central-1_ys7qcIJoY",
+        "IdentityPoolName": "frontend8eb8d358_identitypool_8eb8d358__devamp",
         "UserPoolName": "frontend8eb8d358_userpool_8eb8d358"
       },
       "lastPushDirHash": "gOSrvK1yquHC73led2GFxil4OCk="
+    }
+  },
+  "function": {
+    "getProducts": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2025-04-05T18:15:56.526Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2025-04-05T18:15:56.563Z",
+      "distZipFilename": "getProducts-446a48782f485a464c6a-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
+        "s3Key": "amplify-builds/getProducts-446a48782f485a464c6a-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/function/getProducts-cloudformation-template.json",
+        "logicalId": "functiongetProducts"
+      },
+      "lastPushTimeStamp": "2025-04-05T20:49:19.978Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::438465130459:role/frontendLambdaRolec7b988b6-devamp",
+        "Region": "ca-central-1",
+        "Arn": "arn:aws:lambda:ca-central-1:438465130459:function:getProducts-devamp",
+        "Name": "getProducts-devamp",
+        "LambdaExecutionRole": "frontendLambdaRolec7b988b6-devamp"
+      },
+      "lastPushDirHash": "FLE08BECaAK4m6dEf8mFemqVtaA=",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "bannerTable",
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ]
+        }
+      ]
+    },
+    "getBanners": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2025-04-05T20:00:43.761Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2025-04-05T20:00:43.802Z",
+      "distZipFilename": "getBanners-4d4c554d736a6c646f54-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
+        "s3Key": "amplify-builds/getBanners-4d4c554d736a6c646f54-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/function/getBanners-cloudformation-template.json",
+        "logicalId": "functiongetBanners"
+      },
+      "lastPushTimeStamp": "2025-04-05T20:49:19.979Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::438465130459:role/frontendLambdaRolebdc4e4e2-devamp",
+        "Region": "ca-central-1",
+        "Arn": "arn:aws:lambda:ca-central-1:438465130459:function:getBanners-devamp",
+        "Name": "getBanners-devamp",
+        "LambdaExecutionRole": "frontendLambdaRolebdc4e4e2-devamp"
+      },
+      "lastPushDirHash": "kMVQ83Is77ZgVBrc0pkXBgBCG78=",
+      "lastDevBuildTimeStamp": "2025-04-05T19:40:35.752Z"
+    },
+    "getNavbarImages": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2025-04-05T20:47:57.709Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2025-04-05T20:47:57.761Z",
+      "distZipFilename": "getNavbarImages-6333324969686c68546b-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
+        "s3Key": "amplify-builds/getNavbarImages-6333324969686c68546b-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/function/getNavbarImages-cloudformation-template.json",
+        "logicalId": "functiongetNavbarImages"
+      },
+      "lastPushTimeStamp": "2025-04-05T20:49:19.980Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::438465130459:role/frontendLambdaRole08b801fd-devamp",
+        "Region": "ca-central-1",
+        "Arn": "arn:aws:lambda:ca-central-1:438465130459:function:getNavbarImages-devamp",
+        "Name": "getNavbarImages-devamp",
+        "LambdaExecutionRole": "frontendLambdaRole08b801fd-devamp"
+      },
+      "lastPushDirHash": "WnENE8f51Oh06bGjtIcOeEGXTRM="
+    }
+  },
+  "api": {
+    "ecommerceAPI": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "getProducts",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "getBanners",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "getNavbarImages",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/api/ecommerceAPI-cloudformation-template.json",
+        "logicalId": "apiecommerceAPI"
+      },
+      "lastPushTimeStamp": "2025-04-05T20:49:19.982Z",
+      "output": {
+        "ApiName": "ecommerceAPI",
+        "RootUrl": "https://ndruy9xx1a.execute-api.ca-central-1.amazonaws.com/devamp",
+        "ApiId": "ndruy9xx1a"
+      },
+      "lastPushDirHash": "ub0doH26rYlWRMqx6Z27pVG4f54="
+    }
+  },
+  "storage": {
+    "bannerTable": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/storage/bannerTable-cloudformation-template.json",
+        "logicalId": "storagebannerTable"
+      },
+      "lastPushTimeStamp": "2025-04-05T20:49:19.983Z",
+      "output": {
+        "PartitionKeyName": "id",
+        "Region": "ca-central-1",
+        "Arn": "arn:aws:dynamodb:ca-central-1:438465130459:table/Banners-devamp",
+        "StreamArn": "arn:aws:dynamodb:ca-central-1:438465130459:table/Banners-devamp/stream/2025-04-05T18:16:05.833",
+        "PartitionKeyType": "S",
+        "Name": "Banners-devamp"
+      },
+      "lastPushDirHash": "O1C5XTgzZ+PZ85VxND8Qo4lzycY="
+    },
+    "navbarImages": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/storage/navbarImages-cloudformation-template.json",
+        "logicalId": "storagenavbarImages"
+      },
+      "lastPushTimeStamp": "2025-04-05T20:49:19.984Z",
+      "output": {
+        "PartitionKeyName": "id",
+        "Region": "ca-central-1",
+        "Arn": "arn:aws:dynamodb:ca-central-1:438465130459:table/navbarImages-devamp",
+        "StreamArn": "arn:aws:dynamodb:ca-central-1:438465130459:table/navbarImages-devamp/stream/2025-04-05T20:28:20.770",
+        "PartitionKeyType": "S",
+        "Name": "navbarImages-devamp"
+      },
+      "lastPushDirHash": "TIbXlyHuHgCJ0msp7dNgUBmz1vg="
     }
   }
 }

@@ -1,0 +1,25 @@
+# Node.js dependencies
+node_modules/
+
+# Production build output
+build/
+dist/
+
+# Local environment files
+.env
+
+# OS-specific files
+.DS_Store
+
+# Log files
+*.log
+
+# Amplify local config and generated backend state
+amplify/.config/local-env-info.json
+amplify/#current-cloud-backend/
+amplify/.config/local-*
+amplify/backend/awscloudformation/nested-cloudformation-stack.json
+
+# Optional: Ignore editor specific files (if any)
+.vscode/
+.idea/

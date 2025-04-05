@@ -1,46 +1,39 @@
-import React from 'react';
-import './Products.css';
-import all_products from '../Assets/all_products'; // Adjust if needed
-import Items from '../Items/Items';
+import React, { useEffect, useState } from "react";
+import { fetchProducts } from "../../utils/api"; // adjust path if needed
+import "./Products.css"; // Keep your styling if it's there
 
-const Products = ({ category }) => {
-  let filteredProducts = all_products;
+function Products() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  if (category) {
-    // Map the route category (plural) to the product category (singular)
-    const mapping = {
-      desktops: 'desktop',
-      laptops: 'laptop',
-      'pc components': 'pc component'
-    };
+  useEffect(() => {
+    fetchProducts()
+      .then((data) => {
+        setProducts(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching products:", err);
+        setLoading(false);
+      });
+  }, []);
 
-    const targetCategory = mapping[category.toLowerCase()] || category.toLowerCase();
-    filteredProducts = all_products.filter(
-      (item) => item.category.toLowerCase() === targetCategory
-    );
-  }
+  if (loading) return <p>Loading products...</p>;
 
   return (
-    <div className="products">
-      <h1>
-        {category
-          ? category.charAt(0).toUpperCase() + category.slice(1)
-          : 'LIST OF PRODUCTS'}
-      </h1>
-      <hr />
-      <div className="product-items">
-        {filteredProducts.map((item, i) => (
-          <Items
-            key={i}
-            id={item.id}
-            name={item.name}
-            image={item.image}
-            price={item.price}
-          />
+    <div className="products-container">
+      <h2>Shop</h2>
+      <div className="products-grid">
+        {products.map((product) => (
+          <div key={product.id} className="product-card">
+            <h3>{product.name}</h3>
+            <p>${product.price}</p>
+            {/* You can add image, buttons, etc. here */}
+          </div>
         ))}
       </div>
     </div>
   );
-};
+}
 
 export default Products;

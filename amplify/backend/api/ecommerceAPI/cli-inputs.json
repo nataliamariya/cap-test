@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "paths": {
+    "/products": {
+      "name": "/products",
+      "lambdaFunction": "getProducts",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/banners": {
+      "name": "/banners",
+      "lambdaFunction": "getBanners",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/navbar": {
+      "name": "/navbar",
+      "lambdaFunction": "getNavbarImages",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

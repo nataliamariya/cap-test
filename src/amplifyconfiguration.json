@@ -1,9 +1,9 @@
 {
-  "aws_project_region": "us-east-1",
-  "aws_cognito_identity_pool_id": "us-east-1:d21d9d84-6633-4b92-ae55-f74351405d6d",
-  "aws_cognito_region": "us-east-1",
-  "aws_user_pools_id": "us-east-1_MpmkKs4UN",
-  "aws_user_pools_web_client_id": "7auifp1qh9r7h0737dv4drl3j4",
+  "aws_project_region": "ca-central-1",
+  "aws_cognito_identity_pool_id": "ca-central-1:fd933516-7077-43c4-98a2-ce355171e42a",
+  "aws_cognito_region": "ca-central-1",
+  "aws_user_pools_id": "ca-central-1_ys7qcIJoY",
+  "aws_user_pools_web_client_id": "3lqt3ds0c92avfhqc9jmp5h4jo",
   "oauth": {},
   "aws_cognito_username_attributes": [
     "EMAIL"
@@ -22,5 +22,23 @@
   },
   "aws_cognito_verification_mechanisms": [
     "EMAIL"
+  ],
+  "aws_cloud_logic_custom": [
+    {
+      "name": "ecommerceAPI",
+      "endpoint": "https://ndruy9xx1a.execute-api.ca-central-1.amazonaws.com/devamp",
+      "region": "ca-central-1"
+    }
+  ],
+  "aws_dynamodb_all_tables_region": "ca-central-1",
+  "aws_dynamodb_table_schemas": [
+    {
+      "tableName": "Banners-devamp",
+      "region": "ca-central-1"
+    },
+    {
+      "tableName": "navbarImages-devamp",
+      "region": "ca-central-1"
+    }
   ]
 }
