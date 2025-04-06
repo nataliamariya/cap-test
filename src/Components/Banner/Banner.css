@@ -1,34 +1,54 @@
-/* Banner.css */
 .banner {
   position: relative;
   width: 100%;
-  max-width: 800px; /* Adjust as needed */
-  margin: 0 auto;
+  overflow: hidden;
 }
-  
+
+.banner-images {
+  width: 100%;
+  height: auto;
+}
+
 .banner-images img {
-  width: 1955px;
-  height: 600px;
-  margin-left: -600px;
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures image covers space while maintaining aspect */
+  max-height: 800px;  /* Optional: you can change or remove this */
+  display: block;
 }
-  
 .scroll-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  background: rgba(255, 255, 255, 0.6);
   border: none;
-  padding: 10px;
-  font-size: 24px;
+  font-size: 2rem;
   cursor: pointer;
   z-index: 10;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.2s ease-in-out;
 }
-  
+
+.scroll-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
 .scroll-button.prev {
-  left: -550px;
+  left: 10px;
 }
-  
+
 .scroll-button.next {
-  right: -550px;
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .scroll-button {
+    font-size: 1.5rem;
+    padding: 6px;
+  }
+
+  .banner-images img {
+    max-height: 300px;
+  }
 }

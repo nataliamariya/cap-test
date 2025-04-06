@@ -42,7 +42,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/auth/frontend8eb8d358-cloudformation-template.json",
         "logicalId": "authfrontend8eb8d358"
       },
-      "lastPushTimeStamp": "2025-04-05T20:49:19.975Z",
+      "lastPushTimeStamp": "2025-04-05T23:08:06.281Z",
       "output": {
         "UserPoolId": "ca-central-1_ys7qcIJoY",
         "AppClientIDWeb": "3lqt3ds0c92avfhqc9jmp5h4jo",
@@ -60,19 +60,19 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
-      "lastBuildTimeStamp": "2025-04-05T18:15:56.526Z",
+      "lastBuildTimeStamp": "2025-04-05T23:06:55.760Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2025-04-05T18:15:56.563Z",
-      "distZipFilename": "getProducts-446a48782f485a464c6a-build.zip",
+      "lastPackageTimeStamp": "2025-04-05T23:07:02.383Z",
+      "distZipFilename": "getProducts-354151345a37777a454a-build.zip",
       "s3Bucket": {
         "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
-        "s3Key": "amplify-builds/getProducts-446a48782f485a464c6a-build.zip"
+        "s3Key": "amplify-builds/getProducts-354151345a37777a454a-build.zip"
       },
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/function/getProducts-cloudformation-template.json",
         "logicalId": "functiongetProducts"
       },
-      "lastPushTimeStamp": "2025-04-05T20:49:19.978Z",
+      "lastPushTimeStamp": "2025-04-05T23:08:06.711Z",
       "output": {
         "LambdaExecutionRoleArn": "arn:aws:iam::438465130459:role/frontendLambdaRolec7b988b6-devamp",
         "Region": "ca-central-1",
@@ -80,7 +80,7 @@
         "Name": "getProducts-devamp",
         "LambdaExecutionRole": "frontendLambdaRolec7b988b6-devamp"
       },
-      "lastPushDirHash": "FLE08BECaAK4m6dEf8mFemqVtaA=",
+      "lastPushDirHash": "qg4pKq/UuTAvGkZoTDsEsPvCTxs=",
       "dependsOn": [
         {
           "category": "storage",
@@ -91,25 +91,26 @@
             "StreamArn"
           ]
         }
-      ]
+      ],
+      "lastDevBuildTimeStamp": "2025-04-05T22:43:36.774Z"
     },
     "getBanners": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
-      "lastBuildTimeStamp": "2025-04-05T20:00:43.761Z",
+      "lastBuildTimeStamp": "2025-04-05T21:38:56.562Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2025-04-05T20:00:43.802Z",
-      "distZipFilename": "getBanners-4d4c554d736a6c646f54-build.zip",
+      "lastPackageTimeStamp": "2025-04-05T21:38:56.594Z",
+      "distZipFilename": "getBanners-68735249634558684358-build.zip",
       "s3Bucket": {
         "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
-        "s3Key": "amplify-builds/getBanners-4d4c554d736a6c646f54-build.zip"
+        "s3Key": "amplify-builds/getBanners-68735249634558684358-build.zip"
       },
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/function/getBanners-cloudformation-template.json",
         "logicalId": "functiongetBanners"
       },
-      "lastPushTimeStamp": "2025-04-05T20:49:19.979Z",
+      "lastPushTimeStamp": "2025-04-05T23:08:06.285Z",
       "output": {
         "LambdaExecutionRoleArn": "arn:aws:iam::438465130459:role/frontendLambdaRolebdc4e4e2-devamp",
         "Region": "ca-central-1",
@@ -117,26 +118,26 @@
         "Name": "getBanners-devamp",
         "LambdaExecutionRole": "frontendLambdaRolebdc4e4e2-devamp"
       },
-      "lastPushDirHash": "kMVQ83Is77ZgVBrc0pkXBgBCG78=",
+      "lastPushDirHash": "r03eXllw03t9SrbgABFegjFAhK4=",
       "lastDevBuildTimeStamp": "2025-04-05T19:40:35.752Z"
     },
     "getNavbarImages": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
-      "lastBuildTimeStamp": "2025-04-05T20:47:57.709Z",
+      "lastBuildTimeStamp": "2025-04-05T21:42:07.302Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2025-04-05T20:47:57.761Z",
-      "distZipFilename": "getNavbarImages-6333324969686c68546b-build.zip",
+      "lastPackageTimeStamp": "2025-04-05T21:42:07.336Z",
+      "distZipFilename": "getNavbarImages-48307749796b734b4662-build.zip",
       "s3Bucket": {
         "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
-        "s3Key": "amplify-builds/getNavbarImages-6333324969686c68546b-build.zip"
+        "s3Key": "amplify-builds/getNavbarImages-48307749796b734b4662-build.zip"
       },
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/function/getNavbarImages-cloudformation-template.json",
         "logicalId": "functiongetNavbarImages"
       },
-      "lastPushTimeStamp": "2025-04-05T20:49:19.980Z",
+      "lastPushTimeStamp": "2025-04-05T23:08:06.287Z",
       "output": {
         "LambdaExecutionRoleArn": "arn:aws:iam::438465130459:role/frontendLambdaRole08b801fd-devamp",
         "Region": "ca-central-1",
@@ -144,7 +145,8 @@
         "Name": "getNavbarImages-devamp",
         "LambdaExecutionRole": "frontendLambdaRole08b801fd-devamp"
       },
-      "lastPushDirHash": "WnENE8f51Oh06bGjtIcOeEGXTRM="
+      "lastPushDirHash": "6YIGiOquXP4b68U8sRKSA/zs+do=",
+      "dependsOn": []
     }
   },
   "api": {
@@ -152,14 +154,6 @@
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "getProducts",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        },
         {
           "category": "function",
           "resourceName": "getBanners",
@@ -175,19 +169,27 @@
             "Name",
             "Arn"
           ]
+        },
+        {
+          "category": "function",
+          "resourceName": "getProducts",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
         }
       ],
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/api/ecommerceAPI-cloudformation-template.json",
         "logicalId": "apiecommerceAPI"
       },
-      "lastPushTimeStamp": "2025-04-05T20:49:19.982Z",
+      "lastPushTimeStamp": "2025-04-05T23:08:06.291Z",
       "output": {
         "ApiName": "ecommerceAPI",
         "RootUrl": "https://ndruy9xx1a.execute-api.ca-central-1.amazonaws.com/devamp",
         "ApiId": "ndruy9xx1a"
       },
-      "lastPushDirHash": "ub0doH26rYlWRMqx6Z27pVG4f54="
+      "lastPushDirHash": "KTCKdw6k9wiJHpKDMKojxZ7g4M0="
     }
   },
   "storage": {
@@ -198,7 +200,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/storage/bannerTable-cloudformation-template.json",
         "logicalId": "storagebannerTable"
       },
-      "lastPushTimeStamp": "2025-04-05T20:49:19.983Z",
+      "lastPushTimeStamp": "2025-04-05T23:08:06.292Z",
       "output": {
         "PartitionKeyName": "id",
         "Region": "ca-central-1",
@@ -216,7 +218,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/storage/navbarImages-cloudformation-template.json",
         "logicalId": "storagenavbarImages"
       },
-      "lastPushTimeStamp": "2025-04-05T20:49:19.984Z",
+      "lastPushTimeStamp": "2025-04-05T23:08:06.294Z",
       "output": {
         "PartitionKeyName": "id",
         "Region": "ca-central-1",
@@ -226,6 +228,24 @@
         "Name": "navbarImages-devamp"
       },
       "lastPushDirHash": "TIbXlyHuHgCJ0msp7dNgUBmz1vg="
+    },
+    "products": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/storage/products-cloudformation-template.json",
+        "logicalId": "storageproducts"
+      },
+      "lastPushTimeStamp": "2025-04-05T23:08:06.295Z",
+      "output": {
+        "PartitionKeyName": "id",
+        "Region": "ca-central-1",
+        "Arn": "arn:aws:dynamodb:ca-central-1:438465130459:table/products-devamp",
+        "StreamArn": "arn:aws:dynamodb:ca-central-1:438465130459:table/products-devamp/stream/2025-04-05T22:24:57.435",
+        "PartitionKeyType": "S",
+        "Name": "products-devamp"
+      },
+      "lastPushDirHash": "Mzr4V/oRwjjXIqhuHkTJdsfGrKY="
     }
   }
 }

@@ -16,14 +16,16 @@ const Navbar = ({ signOut, user }) => {
   const totalCartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   useEffect(() => {
-    // Fetch dynamic navbar images from your API endpoint
     fetch("https://ndruy9xx1a.execute-api.ca-central-1.amazonaws.com/devamp/navbar")
       .then(res => res.json())
-      .then(data => setImages({
-        logo: data.logo,
-        cartIcon: data.cartIcon,
-        profileIcon: data.profileIcon,
-      }))
+      .then(data => {
+        console.log("Navbar data:", data); // Optional: just to confirm
+        setImages({
+          logo: data.logo,
+          cartIcon: data.cartIcon,
+          profileIcon: data.profileIcon,
+        });
+      })
       .catch(err => console.error("Error fetching navbar images", err));
   }, []);
 
@@ -55,8 +57,8 @@ const Navbar = ({ signOut, user }) => {
               </Link>
               {menu === "laptops" ? <hr /> : null}
             </li>
-            <li onClick={() => setMenu("pc components")}>
-              <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/pc components'>
+            <li onClick={() => setMenu("pc-components")}>
+              <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/pc-components'>
                 PC Components
               </Link>
               {menu === "pc components" ? <hr /> : null}
@@ -64,24 +66,25 @@ const Navbar = ({ signOut, user }) => {
           </>
         )}
       </ul>
+      <div className='nav-actions'>
+  <div className='nav-view-profile'>
+    <Link to='/profile'>
+      {images.profileIcon && <img src={images.profileIcon} alt='Profile' />}
+    </Link>
+  </div>
 
-      <div className='nav-view-profile'>
-        <Link to='/profile'>
-          {/* Use the dynamic profile icon URL */}
-          {images.profileIcon && <img src={images.profileIcon} alt='Profile' />}
-        </Link>
-      </div>
-      <div className='nav-view-cart'>
-        <Link to='/cart'>
-          {/* Use the dynamic cart icon URL */}
-          {images.cartIcon && <img src={images.cartIcon} alt='Cart' />}
-        </Link>
-        <div className="nav-view-count">{totalCartCount}</div>
-      </div>
+  <div className='nav-view-cart'>
+    <Link to='/cart'>
+      {images.cartIcon && <img src={images.cartIcon} alt='Cart' />}
+    </Link>
+    <div className="nav-view-count">{totalCartCount}</div>
+  </div>
 
-      <div className='logout'>
-        <button onClick={signOut}>Logout</button>
-      </div>
+  <div className='logout'>
+    <button onClick={signOut}>Logout</button>
+  </div>
+</div>
+
     </div>
   );
 };

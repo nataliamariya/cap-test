@@ -8,14 +8,6 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "getProducts"
-        },
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
           "resourceName": "getBanners"
         },
         {
@@ -25,6 +17,14 @@
           ],
           "category": "function",
           "resourceName": "getNavbarImages"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getProducts"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -67,6 +67,7 @@
     },
     "getNavbarImages": {
       "build": true,
+      "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
@@ -143,6 +144,10 @@
       "service": "DynamoDB"
     },
     "navbarImages": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "products": {
       "providerPlugin": "awscloudformation",
       "service": "DynamoDB"
     }

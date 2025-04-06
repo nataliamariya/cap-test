@@ -1,39 +1,61 @@
-import React, { useEffect, useState } from "react";
-import { fetchProducts } from "../../utils/api"; // adjust path if needed
-import "./Products.css"; // Keep your styling if it's there
+import React, { useEffect, useState, useContext } from 'react';
+import './Products.css';
+import { CartContext } from '../../Contexts/CartContext';
+import { toast } from 'react-toastify';
 
-function Products() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+const Products = ({ category }) => {
+  const [filtered, setFiltered] = useState([]);
+  const { addItem } = useContext(CartContext); // ✅ use your existing addItem
 
   useEffect(() => {
-    fetchProducts()
-      .then((data) => {
-        setProducts(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching products:", err);
-        setLoading(false);
-      });
-  }, []);
+    fetch("https://ndruy9xx1a.execute-api.ca-central-1.amazonaws.com/devamp/products")
+      .then(res => res.json())
+      .then(data => {
+        const mapping = {
+          desktops: "desktop",
+          laptops: "laptop",
+          "pc-components": "pc component"
+        };
 
-  if (loading) return <p>Loading products...</p>;
+        const mappedCategory = category
+          ? mapping[category.toLowerCase()] || category.toLowerCase()
+          : null;
+
+        if (mappedCategory) {
+          const filteredItems = data.filter(
+            (p) => p.category.toLowerCase() === mappedCategory
+          );
+          setFiltered(filteredItems);
+        } else {
+          setFiltered(data);
+        }
+      })
+      .catch(err => console.error("Error loading products:", err));
+  }, [category]);
+
+  if (filtered.length === 0) {
+    return <p>Loading products...</p>;
+  }
 
   return (
     <div className="products-container">
-      <h2>Shop</h2>
-      <div className="products-grid">
-        {products.map((product) => (
-          <div key={product.id} className="product-card">
-            <h3>{product.name}</h3>
-            <p>${product.price}</p>
-            {/* You can add image, buttons, etc. here */}
-          </div>
-        ))}
-      </div>
+      {filtered.map(({ id, name, image, price, category }) => (
+        <div key={id} className="product-card">
+          <img src={image} alt={name} />
+          <h3>{name}</h3>
+          <p>${price}</p>
+          <p className="category">{category}</p>
+          <button
+            onClick={() => {
+              addItem({ id, name, image, price, category });
+              toast.success(`${name} added to cart!`);
+            }}>
+            Add to Cart
+          </button>
+        </div>
+      ))}
     </div>
   );
-}
+};
 
 export default Products;

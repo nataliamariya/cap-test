@@ -1,1 +1,10 @@
-[]
+[
+    {
+      "Effect": "Allow",
+      "Action": ["dynamodb:Scan"],
+      "Resource": [
+        "arn:aws:dynamodb:ca-central-1:438465130459:table/products-devamp"
+      ]
+    }
+  ]
+  

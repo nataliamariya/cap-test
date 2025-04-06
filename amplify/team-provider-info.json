@@ -36,15 +36,15 @@
       "function": {
         "getProducts": {
           "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
-          "s3Key": "amplify-builds/getProducts-446a48782f485a464c6a-build.zip"
+          "s3Key": "amplify-builds/getProducts-354151345a37777a454a-build.zip"
         },
         "getBanners": {
           "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
-          "s3Key": "amplify-builds/getBanners-4d4c554d736a6c646f54-build.zip"
+          "s3Key": "amplify-builds/getBanners-68735249634558684358-build.zip"
         },
         "getNavbarImages": {
           "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
-          "s3Key": "amplify-builds/getNavbarImages-6333324969686c68546b-build.zip"
+          "s3Key": "amplify-builds/getNavbarImages-48307749796b734b4662-build.zip"
         }
       },
       "api": {
@@ -52,7 +52,8 @@
       },
       "storage": {
         "bannerTable": {},
-        "navbarImages": {}
+        "navbarImages": {},
+        "products": {}
       }
     }
   }

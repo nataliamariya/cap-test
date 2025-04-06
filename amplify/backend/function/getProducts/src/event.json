@@ -1,5 +1,8 @@
 {
-  "key1": "value1",
-  "key2": "value2",
-  "key3": "value3"
+  "httpMethod": "GET",
+  "path": "/products",
+  "headers": {},
+  "queryStringParameters": null,
+  "body": null,
+  "isBase64Encoded": false
 }

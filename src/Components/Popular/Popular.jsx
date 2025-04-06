@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-import './Popular.css'
-
-const Popular = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default Popular
-=======
 import React from 'react';
 import './Products.css';
 import all_products from '../../Assets/all_products'; 
@@ -58,4 +44,3 @@ const Products = ({ category }) => {
 };
 
 export default Products;
->>>>>>> 4ea3d76 (Filter Categories, add to cart button and checkout page)

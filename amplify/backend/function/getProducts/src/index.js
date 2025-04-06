@@ -1,19 +1,53 @@
+const AWS = require("aws-sdk");
+const docClient = new AWS.DynamoDB.DocumentClient();
 
-
-/**
- * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
- */
 exports.handler = async (event) => {
-    const products = [
-      { id: 1, name: "Green Tea Cleanser", price: 12.99 },
-      { id: 2, name: "Hyaluronic Cream", price: 18.49 },
-      { id: 3, name: "Retinol Serum", price: 24.99 },
-    ];
-  
+  // Handle CORS preflight request
+  if (event.httpMethod === "OPTIONS") {
     return {
       statusCode: 200,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(products),
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "GET,OPTIONS"
+      },
+      body: ""
     };
+  }
+
+  const params = {
+    TableName: "products-devamp" 
   };
-  
+
+  try {
+    const data = await docClient.scan(params).promise();
+    console.log("Fetched products:", data.Items);
+
+    return {
+      statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "GET,OPTIONS",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data.Items)
+    };
+  } catch (err) {
+    console.error("Error fetching products:", err);
+
+    return {
+      statusCode: 500,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "GET,OPTIONS",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        error: "Could not fetch products",
+        details: err.message
+      })
+    };
+  }
+};

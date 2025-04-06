@@ -1,14 +1,22 @@
-
-
-/**
- * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
- */
 const AWS = require("aws-sdk");
 const docClient = new AWS.DynamoDB.DocumentClient();
 
-exports.handler = async () => {
+exports.handler = async (event) => {
+  // Handle CORS preflight request
+  if (event.httpMethod === "OPTIONS") {
+    return {
+      statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "GET,OPTIONS"
+      },
+      body: ""
+    };
+  }
+
   const params = {
-    TableName: "navbarImages-devamp", 
+    TableName: "navbarImages-devamp", // Make sure this exactly matches your table name
     Key: { id: "navbar" }
   };
 
@@ -20,14 +28,24 @@ exports.handler = async () => {
     }
     return {
       statusCode: 200,
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "GET,OPTIONS",
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify(data.Item)
     };
   } catch (err) {
     console.error("Error fetching navbar images:", err);
     return {
       statusCode: 500,
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "GET,OPTIONS",
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({
         error: "Could not fetch navbar images",
         details: err.message
