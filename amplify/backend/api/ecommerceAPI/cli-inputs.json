@@ -21,6 +21,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/cart": {
+      "name": "/cart",
+      "lambdaFunction": "saveCart",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

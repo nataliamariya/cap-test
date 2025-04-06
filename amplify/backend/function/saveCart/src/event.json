@@ -1,0 +1,7 @@
+{
+  "httpMethod": "POST",
+  "queryStringParameters": {
+    "userId": "test-user-nataliamariya"
+  },
+  "body": "{\"cart\":[{\"id\":\"2\",\"name\":\"ARMOURY Ryzen 7\",\"price\":799,\"quantity\":1}]}"
+}

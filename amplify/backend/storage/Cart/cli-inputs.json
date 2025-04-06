@@ -1,0 +1,10 @@
+{
+  "resourceName": "Cart",
+  "tableName": "Cart",
+  "partitionKey": {
+    "fieldName": "userId",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

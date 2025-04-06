@@ -25,6 +25,14 @@
           ],
           "category": "function",
           "resourceName": "getProducts"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "saveCart"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -65,6 +73,11 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "getCart": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "getNavbarImages": {
       "build": true,
       "dependsOn": [],
@@ -86,6 +99,12 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "saveCart": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -102,6 +121,22 @@
         {
           "category": "function",
           "resourceName": "getBanners"
+        }
+      ]
+    },
+    "AMPLIFY_function_getCart_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getCart"
+        }
+      ]
+    },
+    "AMPLIFY_function_getCart_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getCart"
         }
       ]
     },
@@ -136,9 +171,29 @@
           "resourceName": "getProducts"
         }
       ]
+    },
+    "AMPLIFY_function_saveCart_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "saveCart"
+        }
+      ]
+    },
+    "AMPLIFY_function_saveCart_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "saveCart"
+        }
+      ]
     }
   },
   "storage": {
+    "Cart": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
     "bannerTable": {
       "providerPlugin": "awscloudformation",
       "service": "DynamoDB"

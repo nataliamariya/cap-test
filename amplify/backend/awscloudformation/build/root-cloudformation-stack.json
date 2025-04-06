@@ -304,6 +304,28 @@
         }
       }
     },
+    "functionsaveCart": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/function/saveCart-cloudformation-template.json",
+        "Parameters": {
+          "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
+          "s3Key": "amplify-builds/saveCart-35624f45316430483978-build.zip",
+          "env": "devamp"
+        }
+      }
+    },
+    "functiongetCart": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/function/getCart-cloudformation-template.json",
+        "Parameters": {
+          "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
+          "s3Key": "amplify-builds/getCart-56707564305478377969-build.zip",
+          "env": "devamp"
+        }
+      }
+    },
     "apiecommerceAPI": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
@@ -345,6 +367,18 @@
               "Outputs.Arn"
             ]
           },
+          "functionsaveCartName": {
+            "Fn::GetAtt": [
+              "functionsaveCart",
+              "Outputs.Name"
+            ]
+          },
+          "functionsaveCartArn": {
+            "Fn::GetAtt": [
+              "functionsaveCart",
+              "Outputs.Arn"
+            ]
+          },
           "env": "devamp"
         }
       }
@@ -380,6 +414,18 @@
         "Parameters": {
           "tableName": "products",
           "partitionKeyName": "id",
+          "partitionKeyType": "S",
+          "env": "devamp"
+        }
+      }
+    },
+    "storageCart": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/storage/Cart-cloudformation-template.json",
+        "Parameters": {
+          "tableName": "Cart",
+          "partitionKeyName": "userId",
           "partitionKeyType": "S",
           "env": "devamp"
         }
