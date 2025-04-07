@@ -84,6 +84,11 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "getOrders": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "getProducts": {
       "build": true,
       "dependsOn": [
@@ -103,6 +108,11 @@
     "saveCart": {
       "build": true,
       "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "saveOrder": {
+      "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
@@ -156,6 +166,22 @@
         }
       ]
     },
+    "AMPLIFY_function_getOrders_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getOrders"
+        }
+      ]
+    },
+    "AMPLIFY_function_getOrders_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getOrders"
+        }
+      ]
+    },
     "AMPLIFY_function_getProducts_deploymentBucketName": {
       "usedBy": [
         {
@@ -187,6 +213,22 @@
           "resourceName": "saveCart"
         }
       ]
+    },
+    "AMPLIFY_function_saveOrder_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "saveOrder"
+        }
+      ]
+    },
+    "AMPLIFY_function_saveOrder_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "saveOrder"
+        }
+      ]
     }
   },
   "storage": {
@@ -199,6 +241,10 @@
       "service": "DynamoDB"
     },
     "navbarImages": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "orders": {
       "providerPlugin": "awscloudformation",
       "service": "DynamoDB"
     },

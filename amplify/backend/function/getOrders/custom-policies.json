@@ -1,0 +1,10 @@
+[
+  {
+    "Effect": "Allow",
+    "Action": ["dynamodb:Query"],
+    "Resource": [
+      "arn:aws:dynamodb:ca-central-1:438465130459:table/orders-devamp",
+      "arn:aws:dynamodb:ca-central-1:438465130459:table/orders-devamp/index/*"
+    ]
+  }
+]

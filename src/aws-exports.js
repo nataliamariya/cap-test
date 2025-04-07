@@ -50,6 +50,10 @@ const awsmobile = {
         {
             "tableName": "Cart-devamp",
             "region": "ca-central-1"
+        },
+        {
+            "tableName": "orders-devamp",
+            "region": "ca-central-1"
         }
     ]
 };

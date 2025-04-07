@@ -52,7 +52,15 @@
         },
         "getCart": {
           "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
-          "s3Key": "amplify-builds/getCart-56707564305478377969-build.zip"
+          "s3Key": "amplify-builds/getCart-375157386364774b5848-build.zip"
+        },
+        "saveOrder": {
+          "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
+          "s3Key": "amplify-builds/saveOrder-4f424267777a71516254-build.zip"
+        },
+        "getOrders": {
+          "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
+          "s3Key": "amplify-builds/getOrders-4655356a37393678695a-build.zip"
         }
       },
       "api": {
@@ -62,7 +70,8 @@
         "bannerTable": {},
         "navbarImages": {},
         "products": {},
-        "Cart": {}
+        "Cart": {},
+        "orders": {}
       }
     }
   }

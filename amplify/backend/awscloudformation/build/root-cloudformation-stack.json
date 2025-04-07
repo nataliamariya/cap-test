@@ -321,7 +321,29 @@
         "TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/function/getCart-cloudformation-template.json",
         "Parameters": {
           "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
-          "s3Key": "amplify-builds/getCart-56707564305478377969-build.zip",
+          "s3Key": "amplify-builds/getCart-375157386364774b5848-build.zip",
+          "env": "devamp"
+        }
+      }
+    },
+    "functionsaveOrder": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/function/saveOrder-cloudformation-template.json",
+        "Parameters": {
+          "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
+          "s3Key": "amplify-builds/saveOrder-4f424267777a71516254-build.zip",
+          "env": "devamp"
+        }
+      }
+    },
+    "functiongetOrders": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/function/getOrders-cloudformation-template.json",
+        "Parameters": {
+          "deploymentBucketName": "amplify-frontend-devamp-fc978-deployment",
+          "s3Key": "amplify-builds/getOrders-4655356a37393678695a-build.zip",
           "env": "devamp"
         }
       }
@@ -427,6 +449,20 @@
           "tableName": "Cart",
           "partitionKeyName": "userId",
           "partitionKeyType": "S",
+          "env": "devamp"
+        }
+      }
+    },
+    "storageorders": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-frontend-devamp-fc978-deployment/amplify-cfn-templates/storage/orders-cloudformation-template.json",
+        "Parameters": {
+          "tableName": "orders",
+          "partitionKeyName": "userId",
+          "partitionKeyType": "S",
+          "sortKeyName": "orderId",
+          "sortKeyType": "S",
           "env": "devamp"
         }
       }

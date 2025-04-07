@@ -1,0 +1,12 @@
+
+[
+  {
+    "Effect": "Allow",
+    "Action": [
+      "dynamodb:PutItem","dynamodb:GetItem"
+    ],
+    "Resource": [
+      "arn:aws:dynamodb:ca-central-1:438465130459:table/orders-devamp"
+    ]
+  }
+]
